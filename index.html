@@ -17,7 +17,7 @@
 
 <body>
     <div class="container wrapper d-flex justify-content-center p-4">
-        <div class="content p-3">
+        <div class="content p-4" id="con">
             <div>
                 <h2>Password Generator</h2>
             </div>
@@ -25,21 +25,19 @@
 
             <div class="form-group formDiv p-2 mt-4">
                 <div class="d-flex justify-content-center">
-                    <p>gdgd637hfjfj</p>>
+                    <p id="password"></p>>
                 </div>
                 <div class="d-flex justify-content-end">
                     <small>Click to copy</small>
                 </div>
             </div>
 
-            <div class="mt-4">
-                <span><small>LENGTH: </small><small style="color: aliceblue;">14</small></span>
+            <div class="mt-2">
+                <span><small>LENGTH: </small><small style="color: aliceblue;" id="rangeValue">14</small></span>
             </div>
 
-            <div class="mt-4 formDiv p-4">
-                <form class="range-field range">
-                    <input type="range" min="0" max="100" id="customRange3">
-                </form>
+            <div class="mt-2 formDiv p-4 face">
+                <input type="range" min="4" max="32" id="rangeLen" onchange="showRange(this.value)" oninput="showRange(this.value)">
             </div>
 
             <div class="mt-2">
@@ -47,45 +45,45 @@
             </div>
 
 
-            <div class="mt-4 formDiv pt-4 p-3 d-flex justify-content-between">
+            <div class="mt-2 formDiv pt-4 p-2 d-flex justify-content-between">
                 <p>Include Uppercase</p>
 
                 <label class="switch">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" unchecked id="uppercase" onchange="includeUppercase()">
                     <span class="slider round"></span>
                   </label>
             </div>
 
 
-            <div class="mt-4 formDiv pt-4 p-3 d-flex justify-content-between">
+            <div class="mt-2 formDiv pt-4 p-2 d-flex justify-content-between">
                 <p>Include Lowercase</p>
                 
                 <label class="switch">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" unchecked id="lowercase" onchange="includeLowercase()">
                     <span class="slider round"></span>
                   </label>
             </div>
 
-            <div class="mt-4 formDiv pt-4 p-3 d-flex justify-content-between">
+            <div class="mt-2 formDiv pt-3 p-2 d-flex justify-content-between">
                 <p>Include Numbers</p>
                 
                 <label class="switch">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" unchecked id="numbers" onchange="includeNumber()">
                     <span class="slider round"></span>
                   </label>
             </div>
 
-            <div class="mt-4 formDiv pt-4 p-3 d-flex justify-content-between">
+            <div class="mt-2 formDiv pt-3 p-2 d-flex justify-content-between">
                 <p>Include Symbols</p>
                 
                 <label class="switch">
-                    <input type="checkbox" unchecked>
+                    <input type="checkbox" unchecked id="symbol" onchange="includeSymbol()">
                     <span class="slider round"></span>
                   </label>
             </div>
 
            
-                <button type="button" class="btn btn-primary btn-lg mt-4" style="width: 100%;  background-image: linear-gradient(to right, #6877E0 , #7453AE); border: none;">Generate Password</button>
+                <button type="button" onclick="generate()" class="btn btn-primary btn-lg mt-4" style="width: 100%;  background-image: linear-gradient(to right, #6877E0 , #7453AE); border: none;">Generate Password</button>
             
 
 
@@ -93,6 +91,8 @@
         <!--end of content div-->
 
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
