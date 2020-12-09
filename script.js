@@ -1,7 +1,7 @@
 let password = document.getElementById('password');
 password.innerHTML = '';
 let rangeValue = document.getElementById('rangeValue')
-rangeValue.innerHTML = ''
+rangeValue.innerHTML = 14
 
 let upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXTZ';
 let lowerLetters = 'abcdefghiklmnopqrstuvwxyz'
@@ -29,7 +29,7 @@ function includeUppercase(){
         }
        return genString; 
     }else{
-        console.log('no');
+        //console.log('no');
     }  
 }
 
@@ -45,7 +45,7 @@ function includeLowercase(){
         }
        return genString; 
     }else{
-        console.log('no');
+        //console.log('no');
     } 
 }
 
@@ -61,7 +61,7 @@ function includeNumber(){
         }
        return genString; 
     }else{
-        console.log('no');
+        //console.log('no');
     } 
 }
 
@@ -77,7 +77,7 @@ function includeSymbol(){
         }
        return genString; 
     }else{
-        console.log('no');
+        //console.log('no');
     } 
 }
 
@@ -87,8 +87,10 @@ function generate(){
     let getLower;
     let getNumbers;
     let getSymbols;
+    let len = rangeValue.innerHTML
+    genString = ''
 
-    
+
     if(!includeSymbol()){
         getSymbols = '';
     }else{
@@ -115,6 +117,16 @@ function generate(){
     
     if(rangeValue.innerHTML !== ''){
         store.push(getUpper, getLower, getNumbers, getSymbols)
-        console.log(store);
+        newStr = store.join('')
+         for(let i = 0; i <= len; i++){
+            let rnumber = Math.floor(Math.random() * newStr.length)
+            genString += newStr.substring(rnumber, rnumber+1)
+        }
+        password.innerHTML = genString;
     }
   }
+
+
+
+
+  console.log(Math.floor(Math.random() * 100))
