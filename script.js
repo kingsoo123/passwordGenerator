@@ -67,6 +67,7 @@ function generate(){
     if(rangeValue.innerHTML !== ''){
         store.push(getUpper, getLower, getNumbers, getSymbols)
         newStr = store.join('')
+        
          for(let i = 0; i <= len; i++){
             let rnumber = Math.floor(Math.random() * newStr.length)
             genString += newStr.substring(rnumber, rnumber+1)
@@ -74,8 +75,3 @@ function generate(){
         password.innerHTML = genString;
     }
   }
-
-
-
-
-  console.log(Math.floor(Math.random() * 100))
