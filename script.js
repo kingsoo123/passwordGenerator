@@ -14,71 +14,20 @@ function showRange(){
     rangeValue.innerHTML = rangeLen.value
 }
 
-
-
-
 function includeUppercase(){
-    let uppercase = document.getElementById('uppercase')
-    let len = upperLetters.length;
-    let genString = '';
-
-    if(uppercase.checked){
-        for(let i = 0; i <= len; i++){
-            let rnumber = Math.floor(Math.random() * len)
-            genString += upperLetters.substring(rnumber, rnumber+1)
-        }
-       return genString; 
-    }else{
-        //console.log('no');
-    }  
+   return upperLetters 
 }
 
 function includeLowercase(){
-    let lowercase = document.getElementById('lowercase')
-    let len = lowerLetters.length;
-    let genString = '';
-
-    if(lowercase.checked){
-        for(let i = 0; i <= len; i++){
-            let rnumber = Math.floor(Math.random() * len)
-            genString += lowerLetters.substring(rnumber, rnumber+1)
-        }
-       return genString; 
-    }else{
-        //console.log('no');
-    } 
+  return lowerLetters
 }
 
 function includeNumber(){
-    let numbersDiv = document.getElementById('numbers')
-    let len = numbers.length;
-    let genString = '';
-
-    if(numbersDiv.checked){
-        for(let i = 0; i <= len; i++){
-            let rnumber = Math.floor(Math.random() * len)
-            genString += numbers.substring(rnumber, rnumber+1)
-        }
-       return genString; 
-    }else{
-        //console.log('no');
-    } 
+return numbers
 }
 
 function includeSymbol(){
-    let symbolDiv = document.getElementById('symbol')
-    let len = symbols.length;
-    let genString = '';
-
-    if(symbolDiv.checked){
-        for(let i = 0; i <= len; i++){
-            let rnumber = Math.floor(Math.random() * len)
-            genString += symbols.substring(rnumber, rnumber+1)
-        }
-       return genString; 
-    }else{
-        //console.log('no');
-    } 
+  return symbols 
 }
 
 function generate(){
